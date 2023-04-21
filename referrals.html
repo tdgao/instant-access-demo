@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Best Ecommerce Platform in India | Custom Ecommerce Software for Your
+      Needs | Shopify
+    </title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.shopify.com/static/shopify-favicon.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      !(function (a, b) {
+        a("squatch", "https://fast.ssqt.io/squatch-js@2.4.3-4", b);
+      })(function (a, b, c) {
+        var d, e, f;
+        (c["_" + a] = {}),
+          (c[a] = {}),
+          (c[a].ready = function (b) {
+            c["_" + a].ready = c["_" + a].ready || [];
+            c["_" + a].ready.push(b);
+          }),
+          (e = document.createElement("script")),
+          (e.async = 1),
+          (e.src = b),
+          (f = document.getElementsByTagName("script")[0]),
+          f.parentNode.insertBefore(e, f);
+      }, this);
+    </script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            mxs: "436px",
+            sm: "640px",
+            md: "768px",
+            lg: "1024px",
+            xl: "1280px",
+            "2xl": "1536px",
+          },
+          extend: {
+            colors: {
+              theme: "#004C3F",
+              hero: "#FBF7ED",
+              secondary: "#008060",
+              blueTheme: "#F3FCF4",
+            },
+          },
+        },
+      };
+    </script>
+
+    <script>
+      // 1. When squatch.js is ready, run the following function.
+      squatch.ready(function () {
+        // 2. Configure squatch.js for the tenant you are using.
+        squatch.init({
+          // Your tenant alias can be found at https://staging.referralsaasquatch.com/portal/p/5e13ae352555321e8e2dbb8b/t/test/general
+          tenantAlias: "test_ahsf8e6g2r1dh",
+          domain: "https://staging.referralsaasquatch.com",
+        });
+
+        const widgetConfig = {
+          // 3a. Select how you want your user to engage with the widget, the two options are:
+          //  POPUP - Display the widget as a popup modal. Popups widgets are rendered on top of other elements in a page. See https://docs.saasquatch.com/developer/squatchjs/v2#popup-widget
+          //  EMBED - Display the widget embedded in the page. An embedded widget is displayed inline as part of your page. See https://docs.saasquatch.com/developer/squatchjs/v2#embedded-widget
+          engagementMedium: "EMBED",
+          // 3b. Select what widget you would like to display
+          //  The format for program widgets is "p/{program-id}/w/{widget-id}"
+          //  The format for global widgets is "w/{widget-id}"
+          widgetType: "p/instant-access-demo/w/referrerWidget",
+        };
+        // 4. Make the request to upsert your user and render your widget.
+        //  Full Reference on this method and the squatch.js API can be found at https://docs.saasquatch.com/developer/squatchjs/v2/reference#upsertuser
+        squatch
+          .widget(widgetConfig)
+          .then(function (response) {
+            // The widget API automatically inserts the HTML for your widget into your page via an iFrame
+            // However if needed, you can retrieve details about the widget HTML through this function response
+            const widgetConfig = response.widgetConfig;
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- Header Navigation -->
+    <header
+      class="bg-hero px-6 md:px-20 flex py-3 justify-between items-center"
+    >
+      <a href="./index.html">
+        <img class="w-24 md:w-36" src="./assets/logo.png" alt="" />
+      </a>
+      <div class="hidden xl:flex justify-between w-11/12 pl-10 items-center">
+        <div>
+          <ul class="flex gap-x-10">
+            <li class="text-lg text-gray-700 font-semibold hover:text-black">
+              Start<img
+                src="./assets/down-arrow--nf.png"
+                class="inline-block w-8"
+                alt=""
+              />
+            </li>
+            <li class="text-lg text-gray-700 font-semibold hover:text-black">
+              Sell<img
+                src="./assets/down-arrow--nf.png"
+                class="inline-block w-8"
+                alt=""
+              />
+            </li>
+            <li class="text-lg text-gray-700 font-semibold hover:text-black">
+              Market<img
+                src="./assets/down-arrow--nf.png"
+                class="inline-block w-8"
+                alt=""
+              />
+            </li>
+            <li class="text-lg text-gray-700 font-semibold hover:text-black">
+              Manage<img
+                src="./assets/down-arrow--nf.png"
+                class="inline-block w-8"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center">
+          <ul class="flex gap-x-10">
+            <a href="./referrals.html">
+              <li class="text-lg text-gray-700 font-semibold hover:text-black">
+                Refer a friend
+              </li>
+            </a>
+          </ul>
+          <button
+            class="px-6 h-12 bg-secondary text-white font-bold rounded ml-10 hover:bg-theme shadow-lg"
+          >
+            Try for free
+          </button>
+        </div>
+      </div>
+      <div class="xl:hidden ml-2 md:ml-0">
+        <img class="w-5 md:w-8" src="./assets/menu.png" alt="" />
+      </div>
+    </header>
+
+    <!-- widget snippet here -->
+    <div class="squatchembed"></div>
+
+    <!-- Footer Navigation -->
+    <footer class="bg-[#002E25]">
+      <div class="px-10 md:px-20">
+        <ul class="flex gap-8 py-8 border-b-2 border-theme flex-wrap">
+          <li class="text-sm md:text-md font-bold text-white">About</li>
+          <li class="text-sm md:text-md font-bold text-white">Careers</li>
+          <li class="text-sm md:text-md font-bold text-white">
+            Press and Media
+          </li>
+          <li class="text-sm md:text-md font-bold text-white">Shopify Plus</li>
+          <li class="text-sm md:text-md font-bold text-white">Sitemap</li>
+        </ul>
+      </div>
+      <div class="px-10 md:px-20 my-10">
+        <div class="text-gray-300 text-md flex justify-between flex-wrap">
+          <div class="m-4">
+            <h4 class="text-md font-bold text-white mb-4">ONLINE STORE</h4>
+            <ul class="flex flex-col gap-4">
+              <li class="hover:text-white text-sm">Sell Online</li>
+              <li class="hover:text-white text-sm">Features</li>
+              <li class="hover:text-white text-sm">Examples</li>
+              <li class="hover:text-white text-sm">Website builder</li>
+              <li class="hover:text-white text-sm">Online retail</li>
+            </ul>
+          </div>
+          <div class="m-4">
+            <ul class="flex flex-col gap-4 mt-10">
+              <li class="hover:text-white text-sm">Ecommerce website</li>
+              <li class="hover:text-white text-sm">Domain names</li>
+              <li class="hover:text-white text-sm">Themes</li>
+              <li class="hover:text-white text-sm">Shopping cart</li>
+              <li class="hover:text-white text-sm">Ecommerce hosting</li>
+            </ul>
+          </div>
+          <div class="m-4">
+            <ul class="flex flex-col gap-4 mt-10">
+              <li class="hover:text-white text-sm">Mobile commerce</li>
+              <li class="hover:text-white text-sm">Ecommerce Software</li>
+              <li class="hover:text-white text-sm">Online store builder</li>
+              <li class="hover:text-white text-sm">Dropshipping Business</li>
+              <li class="hover:text-white text-sm">Store themes</li>
+            </ul>
+          </div>
+          <div class="m-4">
+            <h4 class="text-md font-bold text-white mb-4">POINT OF SALE</h4>
+            <ul class="flex flex-col gap-4">
+              <li class="hover:text-white text-sm">Point of sale</li>
+              <li class="hover:text-white text-sm">Features</li>
+            </ul>
+          </div>
+          <div class="m-4">
+            <h4 class="text-md font-bold text-white mb-4">SUPPORT</h4>
+            <ul class="flex flex-col gap-4">
+              <li class="hover:text-white text-sm">24/7 support</li>
+              <li class="hover:text-white text-sm">Shopify Help Center</li>
+              <li class="hover:text-white text-sm">Shopify Community</li>
+              <li class="hover:text-white text-sm">API documentation</li>
+              <li class="hover:text-white text-sm">Free tools</li>
+              <li class="hover:text-white text-sm">Free stock photos</li>
+              <li class="hover:text-white text-sm">Websites for sale</li>
+              <li class="hover:text-white text-sm">Logo Maker</li>
+              <li class="hover:text-white text-sm">Business name generator</li>
+              <li class="hover:text-white text-sm">Research</li>
+              <li class="hover:text-white text-sm">Legal</li>
+            </ul>
+          </div>
+          <div class="m-4">
+            <h4 class="text-md font-bold text-white mb-4">SHOPIFY</h4>
+            <ul class="flex flex-col gap-4">
+              <li class="hover:text-white text-sm">Contact</li>
+              <li class="hover:text-white text-sm">Partner program</li>
+              <li class="hover:text-white text-sm">Affiliate program</li>
+              <li class="hover:text-white text-sm">App developers</li>
+              <li class="hover:text-white text-sm">Investors</li>
+              <li class="hover:text-white text-sm">Blog topics</li>
+              <li class="hover:text-white text-sm">Community Events</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="border-t-2 border-theme">
+        <div class="flex justify-between py-10 px-10 md:px-20 flex-wrap">
+          <div class="flex gap-6 flex-wrap my-4">
+            <img class="w-6" src="./assets/socials/facebook.png" alt="" />
+            <img class="w-6" src="./assets/socials/twitter.png" alt="" />
+            <img class="w-6" src="./assets/socials/youtube.png" alt="" />
+            <img class="w-6" src="./assets/socials/instagram.png" alt="" />
+            <img class="w-6" src="./assets/socials/linkedin.png" alt="" />
+            <img class="w-6" src="./assets/socials/pinterest.png" alt="" />
+          </div>
+          <div
+            class="flex gap-6 text-gray-300 text-md md:flex-wrap my-4 flex-col mxs:flex-row"
+          >
+            <p><a href="#">Terms of Service</a></p>
+            <p><a href="#">Privacy Policy</a></p>
+            <p class="text-white">
+              <img
+                class="w-4 inline-block"
+                src="./assets/globe-icon.png"
+                alt=""
+              />
+              <a class="mx-1 inline-block" href="#">India</a>
+              <img
+                class="inline-block w-4"
+                src="./assets/drop-down-arrow.png"
+                alt=""
+              />
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
