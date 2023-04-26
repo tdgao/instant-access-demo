@@ -60,11 +60,17 @@
       squatch.ready(function () {
         // 2. Configure squatch.js for the tenant you are using.
         squatch.init({
-          // Your tenant alias can be found at https://staging.referralsaasquatch.com/portal/p/5e13ae352555321e8e2dbb8b/t/test/general
+          // Your tenant alias can be found at https://staging.referralsaasquatch.com/portal/p/615b87e93a79197cb4f5e6d5/t/test/general
           tenantAlias: "test_ahsf8e6g2r1dh",
           domain: "https://staging.referralsaasquatch.com",
         });
-
+        // 3. Configure squatch-js for your user and widget.
+        //  The information provided here is used to upsert and render the widget for your user
+        //  This request is authenticated via JWT
+        //  A note about generating JWTs:
+        //    JWT's are tokens that are signed with your tenant API key. They must be generated server-side.
+        //    To ensure the security of your tenant and program, do not expose your tenant API key to your frontend
+        //    For more information see https://docs.saasquatch.com/topics/json-web-tokens/
         const widgetConfig = {
           // 3a. Select how you want your user to engage with the widget, the two options are:
           //  POPUP - Display the widget as a popup modal. Popups widgets are rendered on top of other elements in a page. See https://docs.saasquatch.com/developer/squatchjs/v2#popup-widget
@@ -73,20 +79,12 @@
           // 3b. Select what widget you would like to display
           //  The format for program widgets is "p/{program-id}/w/{widget-id}"
           //  The format for global widgets is "w/{widget-id}"
-          widgetType: "p/instant-access-demo/w/referrerWidget",
+          widgetType: "p/instant-access-demo/w/instantAccessReferrerWidget",
+
+          // 4. Make the request to render your widget.
+          //  Full Reference on this method and the squatch.js API can be found at https://docs.saasquatch.com/developer/squatchjs/v2/reference#widget
         };
-        // 4. Make the request to upsert your user and render your widget.
-        //  Full Reference on this method and the squatch.js API can be found at https://docs.saasquatch.com/developer/squatchjs/v2/reference#upsertuser
-        squatch
-          .widget(widgetConfig)
-          .then(function (response) {
-            // The widget API automatically inserts the HTML for your widget into your page via an iFrame
-            // However if needed, you can retrieve details about the widget HTML through this function response
-            const widgetConfig = response.widgetConfig;
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        squatch.widget(widgetConfig);
       });
     </script>
   </head>
