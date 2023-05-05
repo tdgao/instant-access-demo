@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <script>
+      !(function (a, b) {
+        a("squatch", "https://fast.ssqt.io/squatch-js@2.4.3-5", b);
+      })(function (a, b, c) {
+        var d, e, f;
+        (c["_" + a] = {}),
+          (c[a] = {}),
+          (c[a].ready = function (b) {
+            c["_" + a].ready = c["_" + a].ready || [];
+            c["_" + a].ready.push(b);
+          }),
+          (e = document.createElement("script")),
+          (e.async = 1),
+          (e.src = b),
+          (f = document.getElementsByTagName("script")[0]),
+          f.parentNode.insertBefore(e, f);
+      }, this);
+    </script>
+    <script>
+      // 1. When squatch.js is ready, run the following function.
+      squatch.ready(function () {
+        // 2. Configure squatch.js for the tenant you are using.
+        squatch.init({
+          // Your tenant alias can be found at https://staging.referralsaasquatch.com/portal/p/6179e1de4b5256313ff22fca/t/test/general
+          tenantAlias: "test_a7iws76wkk4az",
+          domain: "https://staging.referralsaasquatch.com",
+        });
+        // 3. Configure squatch-js for your user and widget.
+        //  The information provided here is used to upsert and render the widget for your user
+        //  This request is authenticated via JWT
+        //  A note about generating JWTs:
+        //    JWT's are tokens that are signed with your tenant API key. They must be generated server-side.
+        //    To ensure the security of your tenant and program, do not expose your tenant API key to your frontend
+        //    For more information see https://docs.saasquatch.com/topics/json-web-tokens/
+        const widgetConfig = {
+          // 3a. Select how you want your user to engage with the widget, the two options are:
+          //  POPUP - Display the widget as a popup modal. Popups widgets are rendered on top of other elements in a page. See https://docs.saasquatch.com/developer/squatchjs/v2#popup-widget
+          //  EMBED - Display the widget embedded in the page. An embedded widget is displayed inline as part of your page. See https://docs.saasquatch.com/developer/squatchjs/v2#embedded-widget
+          engagementMedium: "EMBED",
+          // 3b. Select what widget you would like to display
+          //  The format for program widgets is "p/{program-id}/w/{widget-id}"
+          //  The format for global widgets is "w/{widget-id}"
+          widgetType: "p/points-program/w/instantAccessReferrerWidget",
+        };
+
+        // 4. Make the request to render your widget.
+        //  Full Reference on this method and the squatch.js API can be found at https://docs.saasquatch.com/developer/squatchjs/v2/reference#widget
+        squatch.widget(widgetConfig);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="squatchembed"></div>
+    <h1 class="title">Hello World!</h1>
+    <p id="currentTime"></p>
+    <div class="squatchpop"></div>
+  </body>
+</html>
